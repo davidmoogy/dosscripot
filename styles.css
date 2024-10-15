@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for a terminal look */
+    background: linear-gradient(135deg, #0c0c0c, #1a1a1a); /* Dark gradient background */
+    color: #00ff00; /* Bright green text for a hacking feel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Hide overflow for cleaner look */
+}
+
+.container {
+    background: rgba(20, 20, 20, 0.9); /* Semi-transparent dark background */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s;
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #00ff00; /* Neon green */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Stronger text shadow */
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+    color: #00ff00; /* Label color */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #00ff00; /* Green border for input */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    background: #222; /* Dark background for input */
+    color: #00ff00; /* Green text for input */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #2980b9; /* Change to blue on focus */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    outline: none;
+}
+
+button {
+    background-color: #00ff00; /* Green button */
+    color: black; /* Black text */
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #2980b9; /* Change to blue on hover */
+    transform: translateY(-2px);
+}
+
+.terminal {
+    margin-top: 20px;
+    background: #222; /* Terminal-like background */
+    color: #fff; /* White text */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: #444; /* Darker header */
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.red-circle, .yellow-circle, .green-circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.red-circle:hover, .yellow-circle:hover, .green-circle:hover {
+    transform: scale(1.2);
+}
+
+.red-circle {
+    background: #e74c3c; /* Red */
+}
+
+.yellow-circle {
+    background: #f1c40f; /* Yellow */
+}
+
+.green-circle {
+    background: #2ecc71; /* Green */
+}
+
+.terminal-body {
+    padding: 15px;
+    overflow-y: auto;
+    max-height: 200px; /* Set max height for scrolling */
+    background: #111; /* Dark background for the terminal body */
+}
+
+.terminal-output {
+    white-space: pre-wrap; /* Maintain formatting */
+    line-height: 1.6;
+}
+
+.terminal-output div {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="text"],
+    button {
+        font-size: 14px;
+    }
+}

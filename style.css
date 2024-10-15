@@ -1,0 +1,78 @@
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #0f0;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+.login-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0f0;
+    animation: glitch 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    25% { transform: translate(2px, -2px); }
+    50% { transform: translate(-2px, 2px); }
+    75% { transform: translate(2px, 2px); }
+    100% { transform: translate(-2px, -2px); }
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-form h1 {
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #0f0;
+    animation: textGlitch 1s infinite linear alternate-reverse;
+}
+
+@keyframes textGlitch {
+    0% { text-shadow: 0 0 5px #0f0; }
+    50% { text-shadow: 0 0 5px #f00; }
+}
+
+#login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #000;
+    color: #0f0;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none; /* Remove default focus outline */
+    caret-color: #0f0; /* Set cursor color */
+}
+
+#login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0f0;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#login-form button:hover {
+    background-color: #0a0;
+}
+
+#error-message {
+    color: #f00;
+    font-size: 14px;
+    margin-top: 10px;
+    text-shadow: 0 0 5px #f00;
+}

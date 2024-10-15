@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <form id="login-form">
+            <h1>Login</h1>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="login-button">Login</button>
+            <p id="error-message"></p>
+        </form>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const loginButton = document.getElementById('login-button');
+        const errorMessage = document.getElementById('error-message');
+
+        // Store the encoded credentials (in this example, using base64 encoding)
+        const validUsername = atob('YWRtaW4=');  // 'admin' (encoded)
+        const validPassword = atob('ZGF0bw==');  // 'dato' (encoded)
+
+        loginButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            // Compare user input with the decoded credentials
+            if (username === validUsername && password === validPassword) {
+                window.location.href = 'attack.php';
+            } else {
+                errorMessage.textContent = 'Invalid username or password';
+            }
+        });
+    </script>
+</body>
+</html>
